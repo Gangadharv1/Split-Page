@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 4rem;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: #fff;
+    border: #fff solid 0.1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 15rem;
+    padding: 1.5rem;
+}
+
+.split.left .btn:hover {
+    background-color: rgb(10, 12, 12,1); 
+    border-color: rgb(21, 22, 20,1);
+}
+
+.split.right .btn:hover {
+    background-color: rgba(28, 122, 28, 1); 
+    border-color: rgba(28, 122, 28, 1);
+}
+
+.container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: #333;
+}
+
+.split {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: width 0.5s ease; /* Transition for width */
+}
+
+.split.left {
+    left: 0;
+    background-color: rgba(90, 226, 69, 0.796); /* Left background color */
+}
+
+.split.right {
+    right: 0;
+    background-color: rgba(43, 43, 43, 0.8); /* Right background color */
+}
+
+.split:hover {
+    width: 75%; /* Increase width on hover */
+}
+
+.split.left:hover {
+    width: 75%; /* Left section expands */
+}
+
+.split.right:hover {
+    width: 75%; /* Right section expands */
+}
+
+.split.left:hover ~ .split.right {
+    width: 25%; /* Right section shrinks */
+}
+
+.split.right:hover ~ .split.left {
+    width: 25%; /* Left section shrinks */
+}
+
+@media (max-width: 850px) {
+    h1 {
+        font-size: 2rem;
+        top: 30%;
+    }
+
+    .btn {
+        padding: 1.2rem;
+        width: 12rem;
+    }
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 1.5rem;
+        top: 35%;
+    }
+
+    .btn {
+        padding: 1rem;
+        width: 10rem;
+    }
+}
